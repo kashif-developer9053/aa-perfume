@@ -27,10 +27,7 @@ export async function GET(req) {
     return NextResponse.json({
       success: true,
       message: result.message,
-      credentials: {
-        email: 'admin@example.com',
-        password: 'admin123',
-      },
+      users: result.users,
     });
   } catch (error) {
     console.error('Seed API error:', error);

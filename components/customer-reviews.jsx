@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Star } from "lucide-react";
 
 export default function CustomerReviews() {
@@ -6,148 +5,145 @@ export default function CustomerReviews() {
     {
       id: 1,
       name: "Areeba K.",
-      role: "Customer",
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+      role: "Verified Buyer",
       review:
-        "Super fast delivery and everything was perfectly packed! The chocolates were fresh and original. Will definitely order again!",
+        "The Royal Oud Intense is absolutely divine! The longevity is incredible — I get compliments all day long. AyeshaAslam has become my go-to for all my fragrance needs.",
       rating: 5,
-      date: "May 23, 2025",
       location: "Rawalpindi",
+      product: "Royal Oud Intense",
     },
     {
       id: 2,
       name: "Hassan M.",
-      role: "Customer",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+      role: "Verified Buyer",
       review:
-        "I’ve been craving imported snacks for months – finally found a trusted seller. Thank you, Chocolates Factory!",
+        "I've been searching for a trusted perfume seller for months. Finally found one! The fragrance was exactly as described — rich, sophisticated, and long-lasting.",
       rating: 5,
-      date: "May 23, 2025",
       location: "Islamabad",
+      product: "Midnight Noir",
     },
     {
       id: 3,
       name: "Sana A.",
-      role: "Customer",
-      image:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+      role: "Verified Buyer",
       review:
-        "Ordered in bulk for a party. Great prices, amazing service, and the kids loved it. Highly recommended!",
+        "Ordered the Velvet Rose Elixir as a gift and everyone loved it! Beautiful packaging, authentic fragrance, and amazing service. Highly recommended!",
       rating: 5,
-      date: "May 23, 2025",
       location: "Bahria Town",
+      product: "Velvet Rose Elixir",
     },
     {
       id: 4,
       name: "Nimra Z.",
-      role: "Customer",
-      image:
-        "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+      role: "Verified Buyer",
       review:
-        "The packaging was so cute, and everything arrived safely. Loved the variety!",
+        "The Pink Romance is my signature scent now. It is feminine, elegant, and lasts all day. The packaging was stunning and everything arrived safely. Love it!",
       rating: 5,
-      date: "May 23, 2025",
       location: "Lahore",
+      product: "Pink Romance",
     },
     {
       id: 5,
       name: "Usman R.",
-      role: "Customer",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+      role: "Verified Buyer",
       review:
-        "Customer service was very responsive and helpful. My order came right on time and exactly as shown.",
+        "Exceptional customer service and my order arrived exactly on time. The Enigma Night perfume is perfect for evening wear — mysterious and captivating.",
       rating: 5,
-      date: "May 23, 2025",
       location: "Rawalpindi",
+      product: "Enigma Night",
     },
     {
       id: 6,
       name: "Fatima S.",
-      role: "Customer",
-      image:
-        "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+      role: "Verified Buyer",
       review:
-        "Best place to get imported chocolates in Pakistan. Real products, real taste!",
+        "Best place to get luxury perfumes in Pakistan. Real, original fragrances at great prices. The Fresh Citrus Burst is my everyday go-to — refreshing and uplifting!",
       rating: 5,
-      date: "May 23, 2025",
       location: "Islamabad",
+      product: "Fresh Citrus Burst",
     },
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto">
-        <div className="max-w-2xl mx-auto text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">What Our Customers Say</h2>
-          <p className="text-gray-600">
-            Don't just take our word for it - hear from our valued customers about their Chocolates Factory experience
-          </p>
+    <section className="py-20 bg-[#0a0a0a] relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-[#d4af37]/3 blur-3xl pointer-events-none" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-2xl mx-auto text-center mb-16">
+          <span
+            className="text-xs tracking-[0.3em] text-[#d4af37] uppercase mb-3 block"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            Testimonials
+          </span>
+          <h2
+            className="text-4xl md:text-5xl font-bold text-[#fafafa] mb-4"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            What Our <span className="text-[#d4af37] italic">Customers</span> Say
+          </h2>
+          <div className="mt-4 h-px w-16 bg-[#d4af37] mx-auto" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reviews.map((review) => (
-            <div key={review.id} className="bg-white p-6 rounded-lg shadow-md">
+            <div
+              key={review.id}
+              className="bg-[#111111] border border-[#262626] p-6 transition-all duration-300 hover:border-[#d4af37]/30 hover:shadow-[0_10px_30px_rgba(212,175,55,0.1)]"
+              style={{ borderRadius: "8px" }}
+            >
               <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
+                {Array.from({ length: 5 }, (_, i) => (
                   <Star
                     key={i}
-                    size={16}
-                    className={
-                      i < review.rating
-                        ? "fill-yellow-400 text-yellow-400"
-                        : "text-gray-300"
-                    }
+                    size={14}
+                    className={i < review.rating ? "fill-[#d4af37] text-[#d4af37]" : "text-[#262626]"}
                   />
                 ))}
-                <span className="text-sm text-gray-500 ml-2">{review.date}</span>
               </div>
 
-              <p className="text-gray-700 mb-6 italic">"{review.review}"</p>
+              <p
+                className="text-[#a1a1a1] text-sm leading-relaxed mb-6"
+                style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic" }}
+              >
+                "{review.review}"
+              </p>
 
-              <div className="flex items-center">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
-                  <Image
-                    src={review.image}
-                    alt={review.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+              <div className="h-px bg-[#262626] mb-4" />
+
+              <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-semibold">{review.name}</p>
-                  <p className="text-sm text-gray-500">
-                    {review.role}, {review.location}
+                  <p
+                    className="text-[#fafafa] text-sm font-semibold"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    {review.name}
+                  </p>
+                  <p
+                    className="text-xs text-[#a1a1a1]"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    {review.role} · {review.location}
                   </p>
                 </div>
+                <span
+                  className="text-[10px] font-bold tracking-wide px-2 py-1 uppercase"
+                  style={{
+                    fontFamily: "'Montserrat', sans-serif",
+                    backgroundColor: "#d4af37",
+                    color: "#0a0a0a",
+                    borderRadius: "3px",
+                    whiteSpace: "nowrap",
+                    maxWidth: "100px",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}
+                >
+                  {review.product}
+                </span>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-10 text-center">
-          <a
-            href="/reviews"
-            className="inline-flex items-center text-primary hover:underline"
-          >
-            View All Reviews
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 ml-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </a>
         </div>
       </div>
     </section>

@@ -24,49 +24,49 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 const faqs = [
   {
-    question: "Where do you source your imported chocolates from?",
+    question: "Where do you source your luxury fragrances from?",
     answer:
-      "We source our imported chocolates from renowned chocolatiers and manufacturers around the world, including Switzerland, Belgium, France, Dubai, UK, and Saudi Arabia. We prioritize quality and authenticity to bring you the finest chocolates.",
+      "We source our fragrances from renowned perfume houses and manufacturers around the world, including France, UAE, UK, and Saudi Arabia. We prioritize quality and authenticity to bring you the finest perfumes.",
   },
   {
-    question: "Are your imported chocolates available year-round, or do you have seasonal offerings?",
+    question: "Are your fragrances authentic and original?",
     answer:
-      "While many of our imported chocolates are available year-round, we also offer seasonal selections for holidays and special occasions. Check our website or store for the latest offerings.",
+      "Absolutely. Every fragrance in our collection is 100% authentic and original. We have zero tolerance for counterfeit products and verify every item before adding it to our collection.",
   },
   {
-    question: "Do you offer chocolates with specific cocoa percentages or flavor profiles?",
+    question: "Do you offer fragrances for both men and women?",
     answer:
-      "Yes, we curate a variety of chocolates with different cocoa percentages and flavor profiles, including dark, milk, and white chocolates to suit every preference.",
+      "Yes, we curate a wide range of fragrances including For Her, For Him, Unisex, and Oud collections to suit every preference and personality.",
   },
   {
-    question: "Can I find limited edition or exclusive chocolates at your store?",
+    question: "Can I find limited edition or exclusive fragrances at your store?",
     answer:
-      "Absolutely! We frequently feature limited edition and exclusive chocolates not available elsewhere for unique and rare chocolate experiences.",
+      "Absolutely! We frequently feature limited edition and exclusive fragrances not available elsewhere, including niche perfumes and collector editions.",
   },
   {
-    question: "How do you ensure the quality and freshness of your imported chocolates?",
+    question: "How do you ensure the quality of your fragrances?",
     answer:
-      "Our chocolates are stored and handled with care under strict standards, and our inventory is regularly rotated to ensure optimal freshness and flavor.",
+      "All our fragrances are stored properly under strict conditions, and our inventory is regularly checked to ensure optimal quality and authenticity.",
   },
   {
-    question: "Do you offer gift packaging or customized gift options for special occasions?",
+    question: "Do you offer gift packaging for special occasions?",
     answer:
-      "Yes, we offer gift packaging and customized options for birthdays, weddings, and corporate events. Let us help you craft the perfect gift.",
+      "Yes, we offer beautiful gift packaging and customized gift sets for birthdays, weddings, and corporate events. Let us help you create the perfect fragrance gift.",
   },
   {
-    question: "Can I request specific brands or types of chocolates for special orders?",
+    question: "Can I request specific perfume brands or fragrances?",
     answer:
-      "Certainly! We welcome requests for specific brands or types. Contact us and we’ll do our best to accommodate your preferences.",
+      "Certainly! We welcome requests for specific brands or fragrances. Contact us and we will do our best to source them for you.",
   },
   {
-    question: "Do you provide information about the origin and ingredients of your imported chocolates?",
+    question: "What is your return policy?",
     answer:
-      "Yes, we share detailed origin and ingredient information. Our staff is always available to help you make informed choices.",
+      "We offer a 7-day return policy on unopened products. If you receive a damaged or incorrect item, please contact us immediately and we will resolve it promptly.",
   },
   {
-    question: "Are your imported chocolates suitable for individuals with dietary restrictions or allergies?",
+    question: "How long does delivery take?",
     answer:
-      "Many of our chocolates contain common allergens, but we also offer suitable options. Let us know your dietary needs and we’ll assist accordingly.",
+      "We offer express delivery across Pakistan, typically within 2-3 business days. Same-day delivery is available in Islamabad and Rawalpindi.",
   },
 ];
   const [activeIndex, setActiveIndex] = useState(null);
@@ -103,124 +103,135 @@ const faqs = [
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
-     
+    <div className="flex min-h-screen flex-col bg-[#0a0a0a]">
+
       <main className="flex-1">
-        {/* Hero Section - Enhanced */}
-        <section className="relative py-24 md:py-32 overflow-hidden">
+        {/* Hero Section */}
+        <section className="relative py-32 overflow-hidden bg-[#0a0a0a]">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
-              alt="Bakery interior"
+              src="https://images.unsplash.com/photo-1541643600914-78b084683702?auto=format&fit=crop&w=2000&q=80"
+              alt="Luxury Perfume"
               fill
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: "cover" }}
               priority
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50 backdrop-blur-sm"></div>
+            <div className="absolute inset-0 bg-[#0a0a0a]/80" />
           </div>
-          
+
           <div className="container relative z-10">
-            <div className="grid gap-10 md:grid-cols-2 items-center">
-              <div className="text-center md:text-left text-white">
-                <span className="inline-block px-4 py-1 rounded-full bg-[#C8815F]/20 text-[#C8815F] text-sm font-medium mb-6 animate-pulse">Get In Touch</span>
-                <h1 className="text-4xl md:text-6xl font-light tracking-wide mb-6 leading-tight">
-                  Contact <span className="text-[#C8815F]">Us</span>
-                </h1>
-                <p className="text-lg md:text-xl text-gray-200 max-w-xl mx-auto md:mx-0">
-                  Have questions, special orders, or just want to say hello? Reach out and let's create something sweet together!
-                </p>
-                <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-                  <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 px-8 py-3 rounded-full text-lg font-medium tracking-wider uppercase">
-                    <Link href="/products">Explore Our Menu</Link>
-                  </Button>
-                  
-                </div>
-              </div>
-              <div className="hidden md:block relative h-[500px]">
-             
-                
-              </div>
+            <div className="max-w-2xl">
+              <span
+                className="text-xs tracking-[0.3em] text-[#d4af37] uppercase mb-4 block"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                Get In Touch
+              </span>
+              <h1
+                className="text-5xl md:text-7xl font-bold text-[#fafafa] mb-6 leading-tight"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Contact <span className="text-[#d4af37] italic">Us</span>
+              </h1>
+              <p
+                className="text-lg text-[#a1a1a1] max-w-xl leading-relaxed mb-8"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                Have questions about our fragrances, want to place a special order, or just want to connect? We are here to help.
+              </p>
+              <Link href="/products">
+                <span
+                  className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-widest uppercase cursor-pointer transition-all duration-300 hover:scale-105"
+                  style={{
+                    fontFamily: "'Montserrat', sans-serif",
+                    backgroundColor: "#d4af37",
+                    color: "#0a0a0a",
+                  }}
+                >
+                  Explore Collection
+                </span>
+              </Link>
             </div>
           </div>
-          
-          <div className="absolute bottom-0 left-0 w-full h-8 bg-[#f8f5f2] clip-diagonal z-10"></div>
         </section>
 
-        {/* Contact Content Section - Enhanced with Timeline */}
-        <section className="py-20 bg-[#f8f5f2] relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[#C8815F]/5 -translate-y-1/2 translate-x-1/2"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#C8815F]/5 translate-y-1/2 -translate-x-1/2"></div>
-          
-          <div className="container relative z-10">
-            <div className="grid gap-8 md:grid-cols-3">
-              {/* Contact Info Column - Timeline Style */}
-              <div className="md:col-span-1">
-                <div className="relative border-l-2 border-[#C8815F]/20 pl-8 ml-4 space-y-12">
-                  <div className="flex items-center justify-center mb-10">
-                    <span className="h-px bg-[#C8815F]/30 w-12"></span>
-                    <h2 className="text-3xl md:text-4xl font-light mx-4 text-[#2a201c]">Let's Connect</h2>
-                    <span className="h-px bg-[#C8815F]/30 w-12"></span>
-                  </div>
-                  
+        {/* Contact Content Section */}
+        <section className="py-20 bg-[#0d0d0d]">
+          <div className="container">
+            <div className="grid gap-10 md:grid-cols-3">
+              {/* Contact Info Column */}
+              <div className="md:col-span-1 space-y-6">
+                <div>
+                  <span
+                    className="text-xs tracking-[0.3em] text-[#d4af37] uppercase mb-3 block"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    Reach Us
+                  </span>
+                  <h2
+                    className="text-3xl font-bold text-[#fafafa] mb-6"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    Let's <span className="text-[#d4af37] italic">Connect</span>
+                  </h2>
+                </div>
+
                   {[
                     {
                       icon: Mail,
                       title: "Email Us",
-                      subtitle: "We'll respond within 24 hours",
-                      content: <a href="mailto: thechocolatesfactory@icloud.com" className="mt-1 block text-[#C8815F] font-medium hover:underline"> thechocolatesfactory@icloud.com</a>,
+                      subtitle: "We respond within 24 hours",
+                      content: <a href="mailto:thechocolatesfactory@icloud.com" className="mt-1 block text-[#d4af37] text-sm hover:underline" style={{ fontFamily: "'Montserrat', sans-serif" }}>thechocolatesfactory@icloud.com</a>,
                     },
                     {
                       icon: Phone,
                       title: "Call Us",
-                      subtitle: "Mon-Sat from 8am to 10pm",
-                      content: <a href="tel:+923165658165" className="mt-1 block text-[#C8815F] font-medium hover:underline">+92316 565 81 65</a>,
+                      subtitle: "Mon-Sat, 8am to 10pm",
+                      content: <a href="tel:+923165658165" className="mt-1 block text-[#d4af37] text-sm hover:underline" style={{ fontFamily: "'Montserrat', sans-serif" }}>+92 316 565 8165</a>,
                     },
                     {
                       icon: MapPin,
                       title: "Visit Us",
-                    
+                      subtitle: "Our flagship location",
                       content: (
-                        <address className="mt-1 not-italic text-gray-700">
-                          Plaza no. 181<br/> Shop no.9 <br/>Lower Ground, Civic Center <br/> Bahria Town, D
-Phase 4 <br/> Islamabad
+                        <address className="mt-1 not-italic text-[#a1a1a1] text-sm leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                          Plaza no. 181, Shop no. 9<br />
+                          Lower Ground, Civic Center<br />
+                          Bahria Town, Phase 4<br />
+                          Islamabad
                         </address>
                       ),
                     },
-                  
                   ].map((item, index) => (
-                    <div key={index} className="relative transform hover:-translate-y-1 transition-transform">
-                      <div className="absolute -left-4 w-8 h-8 rounded-full bg-[#C8815F] flex items-center justify-center">
-                        <span className="text-white font-bold">{index + 1}</span>
+                    <div key={index} className="flex items-start gap-4 p-5 bg-[#111111] border border-[#262626] transition-all duration-300 hover:border-[#d4af37]/30" style={{ borderRadius: "8px" }}>
+                      <div className="w-10 h-10 flex items-center justify-center bg-[#d4af37]/10 border border-[#d4af37]/20 flex-shrink-0" style={{ borderRadius: "50%" }}>
+                        <item.icon className="h-4 w-4 text-[#d4af37]" />
                       </div>
-                      <div className="flex items-start gap-4">
-                        <div className="rounded-full bg-[#C8815F]/10 p-3 text-[#C8815F] flex-shrink-0">
-                          <item.icon className="h-5 w-5" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-[#2a201c]">{item.title}</h3>
-                          <p className="mt-1 text-sm text-gray-600">{item.subtitle}</p>
-                          {item.content}
-                        </div>
+                      <div>
+                        <h3 className="font-semibold text-[#fafafa] text-sm mb-0.5" style={{ fontFamily: "'Montserrat', sans-serif" }}>{item.title}</h3>
+                        <p className="text-xs text-[#a1a1a1] mb-1" style={{ fontFamily: "'Montserrat', sans-serif" }}>{item.subtitle}</p>
+                        {item.content}
                       </div>
                     </div>
                   ))}
-                  
-                  <div className="mt-8 pt-6 border-t border-gray-100">
-                    <h3 className="font-semibold text-[#2a201c] mb-4 text-center">Follow Us</h3>
-                    <div className="flex gap-4 justify-center">
+
+                  <div className="pt-2">
+                    <h3 className="font-semibold text-[#fafafa] text-sm mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>Follow Us</h3>
+                    <div className="flex gap-3">
                       {[
                         { icon: "facebook", path: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" },
                         { icon: "instagram", path: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z M17.5 6.5h.01" },
                         { icon: "twitter", path: "M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" },
-                      ].map((social, index) => (
+                      ].map((social, idx) => (
                         <a
-                          key={index}
+                          key={idx}
                           href="#"
-                          className="rounded-full bg-[#C8815F]/10 p-3 text-[#C8815F] hover:bg-[#C8815F] hover:text-white transition-colors transform hover:scale-110"
-                          aria-label={`Follow us on ${social.icon}`}
+                          className="w-9 h-9 flex items-center justify-center bg-[#111111] border border-[#262626] text-[#a1a1a1] hover:border-[#d4af37] hover:text-[#d4af37] transition-all duration-300"
+                          style={{ borderRadius: "4px" }}
+                          aria-label={`Follow on ${social.icon}`}
                         >
-                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             {social.icon === "instagram" ? (
                               <>
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -234,26 +245,25 @@ Phase 4 <br/> Islamabad
                       ))}
                     </div>
                   </div>
-                </div>
               </div>
 
-              {/* Form Column - Enhanced */}
+              {/* Form Column */}
               <div className="md:col-span-2">
-                <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all">
+                <div className="bg-[#111111] border border-[#262626] p-8 transition-all duration-300 hover:border-[#d4af37]/20" style={{ borderRadius: "8px" }}>
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-14 h-14 rounded-full bg-[#C8815F]/10 flex items-center justify-center">
-                      <MessageSquare className="h-6 w-6 text-[#C8815F]" />
+                    <div className="w-12 h-12 flex items-center justify-center bg-[#d4af37]/10 border border-[#d4af37]/20" style={{ borderRadius: "50%" }}>
+                      <MessageSquare className="h-5 w-5 text-[#d4af37]" />
                     </div>
                     <div>
-                      <h2 className="text-3xl md:text-4xl font-light text-[#2a201c]">Send Us a Message</h2>
-                      <p className="text-gray-600">We're here to help with any inquiries or special requests!</p>
+                      <h2 className="text-2xl font-bold text-[#fafafa]" style={{ fontFamily: "'Playfair Display', serif" }}>Send Us a Message</h2>
+                      <p className="text-[#a1a1a1] text-sm" style={{ fontFamily: "'Montserrat', sans-serif" }}>We are here to help with any fragrance inquiries!</p>
                     </div>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid gap-6 sm:grid-cols-2">
-                      <div className="space-y-2 transform hover:-translate-y-1 transition-transform">
-                        <Label htmlFor="name" className="text-[#2a201c] font-semibold">Full Name</Label>
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid gap-5 sm:grid-cols-2">
+                      <div className="space-y-1">
+                        <Label htmlFor="name" className="text-[#fafafa] text-xs font-semibold tracking-wide uppercase" style={{ fontFamily: "'Montserrat', sans-serif" }}>Full Name</Label>
                         <Input
                           id="name"
                           name="name"
@@ -261,11 +271,12 @@ Phase 4 <br/> Islamabad
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="border-gray-200 focus:border-[#C8815F] focus:ring-[#C8815F]/20 shadow-sm"
+                          className="bg-[#0a0a0a] border-[#262626] text-[#fafafa] placeholder-[#a1a1a1] focus:border-[#d4af37] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                          style={{ fontFamily: "'Montserrat', sans-serif", borderRadius: "4px" }}
                         />
                       </div>
-                      <div className="space-y-2 transform hover:-translate-y-1 transition-transform">
-                        <Label htmlFor="email" className="text-[#2a201c] font-semibold">Email Address</Label>
+                      <div className="space-y-1">
+                        <Label htmlFor="email" className="text-[#fafafa] text-xs font-semibold tracking-wide uppercase" style={{ fontFamily: "'Montserrat', sans-serif" }}>Email Address</Label>
                         <Input
                           id="email"
                           name="email"
@@ -274,13 +285,14 @@ Phase 4 <br/> Islamabad
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="border-gray-200 focus:border-[#C8815F] focus:ring-[#C8815F]/20 shadow-sm"
+                          className="bg-[#0a0a0a] border-[#262626] text-[#fafafa] placeholder-[#a1a1a1] focus:border-[#d4af37] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                          style={{ fontFamily: "'Montserrat', sans-serif", borderRadius: "4px" }}
                         />
                       </div>
                     </div>
 
-                    <div className="space-y-2 transform hover:-translate-y-1 transition-transform">
-                      <Label htmlFor="phone" className="text-[#2a201c] font-semibold">Phone Number (Optional)</Label>
+                    <div className="space-y-1">
+                      <Label htmlFor="phone" className="text-[#fafafa] text-xs font-semibold tracking-wide uppercase" style={{ fontFamily: "'Montserrat', sans-serif" }}>Phone (Optional)</Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -288,14 +300,13 @@ Phase 4 <br/> Islamabad
                         placeholder="+92 123 456 7890"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="border-gray-200 focus:border-[#C8815F] focus:ring-[#C8815F]/20 shadow-sm"
+                        className="bg-[#0a0a0a] border-[#262626] text-[#fafafa] placeholder-[#a1a1a1] focus:border-[#d4af37] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                        style={{ fontFamily: "'Montserrat', sans-serif", borderRadius: "4px" }}
                       />
                     </div>
 
-                
-
-                    <div className="space-y-2 transform hover:-translate-y-1 transition-transform">
-                      <Label htmlFor="message" className="text-[#2a201c] font-semibold">Your Message</Label>
+                    <div className="space-y-1">
+                      <Label htmlFor="message" className="text-[#fafafa] text-xs font-semibold tracking-wide uppercase" style={{ fontFamily: "'Montserrat', sans-serif" }}>Your Message</Label>
                       <Textarea
                         id="message"
                         name="message"
@@ -304,155 +315,154 @@ Phase 4 <br/> Islamabad
                         value={formData.message}
                         onChange={handleChange}
                         required
-                        className="border-gray-200 focus:border-[#C8815F] focus:ring-[#C8815F]/20 resize-none shadow-sm"
+                        className="bg-[#0a0a0a] border-[#262626] text-[#fafafa] placeholder-[#a1a1a1] focus:border-[#d4af37] focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 resize-none"
+                        style={{ fontFamily: "'Montserrat', sans-serif", borderRadius: "4px" }}
                       />
                     </div>
 
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-[#C8815F] hover:bg-[#A66B4F] text-white border-none px-8 transform hover:scale-105 transition-transform" 
-                      size="lg" 
+                    <button
+                      type="submit"
                       disabled={isSubmitting}
+                      className="w-full py-4 text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:scale-[1.01] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                      style={{
+                        fontFamily: "'Montserrat', sans-serif",
+                        backgroundColor: "#d4af37",
+                        color: "#0a0a0a",
+                        border: "none",
+                        cursor: "pointer",
+                        borderRadius: "4px",
+                      }}
                     >
-                      {isSubmitting ? (
-                        <span className="flex items-center justify-center">
-                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                          </svg>
-                          Sending...
-                        </span>
-                      ) : (
-                        <span className="flex items-center justify-center">
-                          Send Message
-                          <Send className="ml-2 h-4 w-4" />
-                        </span>
+                      {isSubmitting ? "Sending..." : (
+                        <>Send Message <Send className="h-4 w-4" /></>
                       )}
-                    </Button>
+                    </button>
                   </form>
-                </div>
-                
-                {/* Image Section - Enhanced */}
-                <div className="mt-8 grid gap-6 md:grid-cols-2">
-                  <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl border-8 border-white transform rotate-3">
-                    <Image 
-                      src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" 
-                      alt="Our fresh bakery items" 
-                      fill
-                      style={{ objectFit: 'cover' }}
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-center justify-center">
-                      <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg text-center max-w-xs">
-                        <h3 className="text-xl font-semibold text-[#2a201c]">Special Orders Welcome!</h3>
-                        <p className="text-sm text-gray-700 mt-2">Custom cakes, pastries, and catering for all occasions.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl border-4 border-white transform -rotate-3">
-                    <Image
-                      src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
-                      alt="Pastries"
-                      fill
-                      style={{ objectFit: 'cover' }}
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Map Section - Enhanced */}
-        <section className="py-20 bg-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[#C8815F]/5 -translate-y-1/2 translate-x-1/2"></div>
-          <div className="container relative z-10">
-            <div className="max-w-3xl mx-auto text-center mb-10">
-              <span className="inline-block px-4 py-1 rounded-full bg-[#C8815F]/10 text-[#C8815F] text-sm font-medium mb-4 animate-pulse">Find Us</span>
-              <h2 className="text-3xl md:text-4xl font-light text-[#2a201c]">
-                Visit <span className="text-[#C8815F]">Chalet Cafe</span>
+        {/* Map Section */}
+        <section className="py-20 bg-[#0a0a0a]">
+          <div className="container">
+            <div className="max-w-2xl mx-auto text-center mb-12">
+              <span
+                className="text-xs tracking-[0.3em] text-[#d4af37] uppercase mb-3 block"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                Find Us
+              </span>
+              <h2
+                className="text-3xl md:text-4xl font-bold text-[#fafafa]"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Visit <span className="text-[#d4af37] italic">AyeshaAslam</span>
               </h2>
-              <p className="mt-4 text-gray-600">
-                Join us in the heart of Islamabad for a warm, delightful experience!
-              </p>
+              <div className="mt-4 h-px w-16 bg-[#d4af37] mx-auto" />
             </div>
-            
-            <div className="relative rounded-xl overflow-hidden shadow-md border border-gray-100">
+
+            <div className="relative overflow-hidden border border-[#262626]" style={{ borderRadius: "8px" }}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6649.262647492115!2d73.04488097256163!3d33.72599623077015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbffcd5f3ba2d%3A0xe8bba1398a19a04c!2sF-7%20Markaz%20F-7%2C%20Islamabad%2C%20Islamabad%20Capital%20Territory%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
                 width="100%"
-                height="450"
-                style={{ border: 0 }}
+                height="400"
+                style={{ border: 0, filter: "grayscale(1) invert(0.9) brightness(0.8)" }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Chalet Cafe Location"
-              ></iframe>
-              <div className="absolute bottom-6 left-6 bg-white/80 backdrop-blur-sm p-4 rounded-lg shadow-md">
-                <Button asChild size="lg" className="bg-[#C8815F] hover:bg-[#A66B4F] text-white border-none">
-                  <Link href="/locations">Get Directions</Link>
-                </Button>
-              </div>
+                title="AyeshaAslam Location"
+              />
             </div>
           </div>
         </section>
 
-        {/* FAQs - Enhanced with Icons and Animations */}
-<div className="py-20 bg-[#f8f5f2] relative overflow-hidden">
-  <div className="w-[60%] mx-auto space-y-4">
-    {faqs.map((faq, index) => (
-      <div key={index} className="bg-white border border-gray-200 rounded-xl shadow-sm">
-        <button
-          onClick={() => toggle(index)}
-          className="w-full px-6 py-4 text-left font-medium text-[#2a201c] flex justify-between items-center hover:bg-[#f2ece9] transition-all"
-        >
-          <span>{faq.question}</span>
-          <span className="text-[#C8815F] text-xl">
-            {activeIndex === index ? '-' : '+'}
-          </span>
-        </button>
-        {activeIndex === index && (
-          <div className="px-6 pb-4 text-gray-600">{faq.answer}</div>
-        )}
-      </div>
-    ))}
-  </div>
-</div>
+        {/* FAQs */}
+        <div className="py-20 bg-[#0d0d0d]">
+          <div className="container">
+            <div className="text-center mb-12">
+              <span
+                className="text-xs tracking-[0.3em] text-[#d4af37] uppercase mb-3 block"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                FAQ
+              </span>
+              <h2
+                className="text-3xl md:text-4xl font-bold text-[#fafafa]"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Frequently Asked <span className="text-[#d4af37] italic">Questions</span>
+              </h2>
+              <div className="mt-4 h-px w-16 bg-[#d4af37] mx-auto" />
+            </div>
+
+            <div className="max-w-3xl mx-auto space-y-3">
+              {faqs.map((faq, index) => (
+                <div key={index} className="bg-[#111111] border border-[#262626] overflow-hidden transition-all duration-300 hover:border-[#d4af37]/30" style={{ borderRadius: "8px" }}>
+                  <button
+                    onClick={() => toggle(index)}
+                    className="w-full px-6 py-4 text-left flex justify-between items-center gap-4 hover:bg-[#1a1a1a] transition-all duration-300"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    <span className="text-sm font-medium text-[#fafafa]">{faq.question}</span>
+                    <span className="text-[#d4af37] text-xl font-light flex-shrink-0">
+                      {activeIndex === index ? '−' : '+'}
+                    </span>
+                  </button>
+                  {activeIndex === index && (
+                    <div className="px-6 pb-4 text-[#a1a1a1] text-sm leading-relaxed border-t border-[#262626] pt-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
 
 
    
 
 
-        {/* CTA Section - Enhanced with Gradient and Parallax */}
-        <section className="bg-gradient-to-b from-[#C8815F] to-[#A66B4F] py-16 text-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-white/5 transform translate-x-1/3 -translate-y-1/3 animate-pulse"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-black/5 transform -translate-x-1/3 translate-y-1/3 animate-pulse"></div>
-          
-          <div className="container relative z-10">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-light mb-4">
-                Join Our <span className="text-white">Newsletter</span>
+        {/* CTA Section */}
+        <section className="py-16 bg-[#111111] border-t border-[#262626]">
+          <div className="container">
+            <div className="max-w-2xl mx-auto text-center">
+              <h2
+                className="text-3xl font-bold text-[#fafafa] mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Stay in the <span className="text-[#d4af37] italic">Fragrance Loop</span>
               </h2>
-              <p className="text-lg opacity-90 mb-8">
-                Stay updated with seasonal offerings, exclusive promotions, and upcoming events at Chalet Cafe.
+              <p
+                className="text-[#a1a1a1] text-sm mb-8"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                Subscribe to receive exclusive offers, new arrivals, and fragrance tips from AyeshaAslam.
               </p>
-              
               <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <Input 
-                  type="email" 
-                  placeholder="Your email address" 
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-white focus:ring-white/20 shadow-sm"
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  className="flex-1 px-4 py-3 text-sm bg-[#0a0a0a] border border-[#262626] text-[#fafafa] placeholder-[#a1a1a1] focus:outline-none focus:border-[#d4af37] transition-colors"
+                  style={{ fontFamily: "'Montserrat', sans-serif", borderRadius: "4px" }}
                 />
-                <Button size="lg" className="bg-white text-[#C8815F] hover:bg-white/90 whitespace-nowrap transform hover:scale-105 transition-transform">
+                <button
+                  className="px-6 py-3 text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:scale-105 whitespace-nowrap"
+                  style={{
+                    fontFamily: "'Montserrat', sans-serif",
+                    backgroundColor: "#d4af37",
+                    color: "#0a0a0a",
+                    border: "none",
+                    cursor: "pointer",
+                    borderRadius: "4px",
+                  }}
+                >
                   Subscribe
-                </Button>
+                </button>
               </div>
-              
-              <p className="text-sm mt-4 opacity-80">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
             </div>
           </div>
         </section>

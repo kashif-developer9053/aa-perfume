@@ -1,35 +1,35 @@
-import { Inter } from "next/font/google"
+import { Playfair_Display, Montserrat } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
-import MainNav from "@/components/main-nav"
+import ConditionalHeader from "@/components/conditional-header"
 import { CartProvider } from "@/context/CartContext";
 
-const inter = Inter({ subsets: ["latin"] })
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  weight: ["400", "700"],
+})
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  weight: ["300", "400", "500", "600", "700"],
+})
 
 export const metadata = {
-  title: "The Chocolate Factory - Delicious Treats & Gifts",
-  description: "Discover premium handcrafted chocolates, candies and sweet treats",
-    generator: 'v0.dev'
+  title: "AyeshaAslam - Luxury Fragrances & Premium Perfumes",
+  description: "Discover exquisite luxury fragrances. Premium handcrafted perfumes that define elegance and sophistication.",
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-
-      <body className={inter.className}>
-
-        <ThemeProvider attribute="class" defaultTheme="light">
-
-              <CartProvider>
-<header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center">
-          <MainNav />
-        </div>
-      </header>
-          {children}
-
-                  </CartProvider>
-
+    <html lang="en" suppressHydrationWarning className="dark">
+      <body className={`${playfair.variable} ${montserrat.variable} bg-[#0a0a0a] text-[#fafafa]`} style={{ fontFamily: "'Montserrat', sans-serif" }}>
+        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark">
+          <CartProvider>
+            <ConditionalHeader />
+            {children}
+          </CartProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,10 +1,7 @@
-// app/categories/page.jsx
 "use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
-import MainNav from "@/components/main-nav";
 import Footer from "@/components/footer";
 import axios from "axios";
 
@@ -18,46 +15,61 @@ export default function CategoriesPage() {
       try {
         setLoading(true);
         const response = await axios.get("/api/products/categories");
-        console.log('Categories Response:', JSON.stringify(response.data, null, 2));
         if (response.data.success) {
           setCategories(response.data.data);
         } else {
           setError("Failed to load categories");
         }
-      } catch (error) {
-        console.error("Error fetching categories:", error.message, error.response?.data);
-        setError(error.response?.data?.message || "An error occurred while fetching categories");
+      } catch (err) {
+        setError(err.response?.data?.message || "An error occurred while fetching categories");
       } finally {
         setLoading(false);
       }
     };
-
     fetchCategories();
   }, []);
 
+  const PageHeader = () => (
+    <section className="py-20 bg-[#0d0d0d] border-b border-[#262626]">
+      <div className="container text-center">
+        <span
+          className="text-xs tracking-[0.3em] text-[#d4af37] uppercase mb-3 block"
+          style={{ fontFamily: "'Montserrat', sans-serif" }}
+        >
+          Shop By
+        </span>
+        <h1
+          className="text-4xl md:text-6xl font-bold text-[#fafafa] mb-4"
+          style={{ fontFamily: "'Playfair Display', serif" }}
+        >
+          Fragrance <span className="text-[#d4af37] italic">Categories</span>
+        </h1>
+        <p
+          className="max-w-[600px] mx-auto text-[#a1a1a1] text-sm leading-relaxed"
+          style={{ fontFamily: "'Montserrat', sans-serif" }}
+        >
+          Explore our curated collections — from floral and oriental to fresh and woody, discover your perfect scent family.
+        </p>
+        <div className="mt-4 h-px w-16 bg-[#d4af37] mx-auto" />
+      </div>
+    </section>
+  );
+
   if (loading) {
     return (
-      <div className="flex min-h-screen flex-col bg-[#f8f5f2]">
-        <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
-          <div className="container flex h-16 items-center">
-            <MainNav />
+      <div className="min-h-screen bg-[#0a0a0a]">
+        <PageHeader />
+        <div className="flex justify-center items-center min-h-[300px]">
+          <div className="flex flex-col items-center gap-4">
+            <div className="w-12 h-12 border-2 border-[#d4af37] border-t-transparent rounded-full animate-spin" />
+            <span
+              className="text-[#a1a1a1] text-sm"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              Loading categories...
+            </span>
           </div>
-        </header>
-        <main className="flex-1">
-          <div className="container py-12">
-            <div className="mb-8 text-center">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-[#2a201c]">
-                Our Delicious Categories
-              </h1>
-              <p className="mt-4 text-lg text-gray-600">
-                Explore our handcrafted selection of freshly baked goods and cafe delights
-              </p>
-            </div>
-            <div className="flex justify-center items-center min-h-[400px]">
-              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#C8815F]"></div>
-            </div>
-          </div>
-        </main>
+        </div>
         <Footer />
       </div>
     );
@@ -65,24 +77,16 @@ export default function CategoriesPage() {
 
   if (error) {
     return (
-      <div className="flex min-h-screen flex-col bg-[#f8f5f2]">
-        <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
-          <div className="container flex h-16 items-center">
-            <MainNav />
-          </div>
-        </header>
-        <main className="flex-1">
-          <div className="container py-12">
-            <div className="mb-8 text-center">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-[#2a201c]">
-                Our Delicious Categories
-              </h1>
-            </div>
-            <div className="flex justify-center items-center min-h-[200px]">
-              <p className="text-red-500">{error}</p>
-            </div>
-          </div>
-        </main>
+      <div className="min-h-screen bg-[#0a0a0a]">
+        <PageHeader />
+        <div className="flex justify-center items-center min-h-[300px]">
+          <p
+            className="text-[#a1a1a1]"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            {error}. Please try again later.
+          </p>
+        </div>
         <Footer />
       </div>
     );
@@ -90,75 +94,90 @@ export default function CategoriesPage() {
 
   if (categories.length === 0) {
     return (
-      <div className="flex min-h-screen flex-col bg-[#f8f5f2]">
-        <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
-          <div className="container flex h-16 items-center">
-            <MainNav />
-          </div>
-        </header>
-        <main className="flex-1">
-          <div className="container py-12">
-            <div className="mb-8 text-center">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-[#2a201c]">
-                Our Delicious Categories
-              </h1>
-              <p className="mt-4 text-lg text-gray-600">
-                Explore our handcrafted selection of freshly baked goods and cafe delights
-              </p>
-            </div>
-            <div className="flex justify-center items-center min-h-[200px]">
-              <p className="text-gray-600">No categories available at the moment.</p>
-            </div>
-          </div>
-        </main>
+      <div className="min-h-screen bg-[#0a0a0a]">
+        <PageHeader />
+        <div className="flex justify-center items-center min-h-[300px]">
+          <p
+            className="text-[#a1a1a1]"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            No categories available at the moment.
+          </p>
+        </div>
         <Footer />
       </div>
     );
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#f8f5f2]">
-      
-      <main className="flex-1">
-        <div className="container py-12">
-          <div className="mb-8 text-center">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-[#2a201c]">
-              Our Delicious Categories
-            </h1>
-            <p className="mt-4 text-lg text-gray-600">
-              Explore our handcrafted selection of freshly baked goods and cafe delights
-            </p>
-          </div>
+    <div className="min-h-screen bg-[#0a0a0a]">
+      <PageHeader />
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {/* Categories Grid */}
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((category) => (
-              <Link key={category._id} href={`/categories/${category._id}`} className="h-full">
-                <Card className="overflow-hidden transition-all hover:shadow-lg border-none h-full flex flex-col">
-                  <CardContent className="p-0 flex flex-col h-full">
-                    <div className="aspect-[4/3] overflow-hidden flex-shrink-0">
-                      <img
-                        src={category.image || `https://via.placeholder.com/600x450?text=${encodeURIComponent(category.name)}`}
-                        alt={category.name}
-                        className="h-full w-full object-cover transition-transform hover:scale-105"
-                      />
-                    </div>
-                    <div className="p-6 bg-white flex flex-col flex-grow">
-                      <h3 className="text-xl font-semibold text-[#2a201c]">{category.name}</h3>
-                      <p className="mt-2 text-sm text-gray-600 flex-grow">{category.description || "No description available"}</p>
-                      <div className="mt-4 flex items-center justify-between">
-                        <span className="text-xs px-2 py-1 bg-[#f8f5f2] text-[#8B5A2B] rounded-full">
-                          {category.productCount || 0} Items
+              <Link key={category._id} href={`/categories/${category._id}`}>
+                <div
+                  className="group relative overflow-hidden bg-[#111111] border border-[#262626] transition-all duration-300 hover:border-[#d4af37]/40 hover:shadow-[0_20px_40px_rgba(212,175,55,0.15)] hover:scale-[1.02]"
+                  style={{ borderRadius: "8px" }}
+                >
+                  {/* Image */}
+                  <div className="aspect-[16/9] overflow-hidden bg-[#0d0d0d]">
+                    <img
+                      src={category.image || "/placeholder.svg"}
+                      alt={category.name}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      onError={(e) => { e.target.src = "/placeholder.svg"; }}
+                    />
+                    <div className="absolute inset-0 bg-[#d4af37]/0 group-hover:bg-[#d4af37]/10 transition-all duration-300" />
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3
+                      className="text-xl font-bold text-[#fafafa] mb-2 group-hover:text-[#d4af37] transition-colors"
+                      style={{ fontFamily: "'Playfair Display', serif" }}
+                    >
+                      {category.name}
+                    </h3>
+                    <p
+                      className="text-[#a1a1a1] text-sm leading-relaxed mb-5"
+                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    >
+                      {category.description || "Explore this collection"}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      {category.productCount !== undefined && (
+                        <span
+                          className="text-xs tracking-widest uppercase text-[#a1a1a1]"
+                          style={{ fontFamily: "'Montserrat', sans-serif" }}
+                        >
+                          {category.productCount} Items
                         </span>
-                        <span className="text-sm font-medium text-[#C8815F] hover:underline">Browse Category</span>
-                      </div>
+                      )}
+                      <span
+                        className="text-xs tracking-widest uppercase text-[#d4af37] flex items-center gap-2 ml-auto group-hover:gap-3 transition-all"
+                        style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      >
+                        Browse Collection
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </span>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+
+                  {/* Gold bottom border accent */}
+                  <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#d4af37] transition-all duration-500 group-hover:w-full" />
+                </div>
               </Link>
             ))}
           </div>
         </div>
-      </main>
+      </section>
+
       <Footer />
     </div>
   );

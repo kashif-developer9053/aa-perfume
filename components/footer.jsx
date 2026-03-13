@@ -3,137 +3,171 @@ import { Facebook, Instagram, Twitter, Youtube } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="border-t bg-background">
-      <div className="container py-8 md:py-12">
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
+    <footer className="bg-[#0a0a0a] border-t border-[#262626]">
+      <div className="container py-16">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
+          {/* Brand column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block">
-              <img src="/images/logo.png" alt="The Chocolate Factory" className="h-14 w-auto" />
+            <Link href="/" className="inline-block mb-4">
+              <span
+                className="text-2xl font-bold tracking-wider"
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  color: "#d4af37",
+                  letterSpacing: "0.1em",
+                }}
+              >
+                AyeshaAslam
+              </span>
             </Link>
-            <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              Handcrafted chocolates and confections made with the finest ingredients. Bringing sweetness to your life
-              since 2010.
+            <p
+              className="mt-2 max-w-xs text-sm text-[#a1a1a1] leading-relaxed"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              Bringing you the world's finest luxury fragrances. Experience elegance, sophistication, and authenticity with every spritz.
             </p>
-            <div className="mt-4 flex space-x-4">
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <Youtube className="h-5 w-5" />
-                <span className="sr-only">YouTube</span>
-              </Link>
+            <div className="mt-6 flex space-x-3">
+              {[
+                { Icon: Facebook, label: "Facebook" },
+                { Icon: Twitter, label: "Twitter" },
+                { Icon: Instagram, label: "Instagram" },
+                { Icon: Youtube, label: "YouTube" },
+              ].map(({ Icon, label }) => (
+                <Link
+                  key={label}
+                  href="#"
+                  className="w-9 h-9 flex items-center justify-center border border-[#262626] text-[#a1a1a1] hover:border-[#d4af37] hover:text-[#d4af37] transition-all duration-300"
+                  style={{ borderRadius: "4px" }}
+                >
+                  <Icon className="h-4 w-4" />
+                  <span className="sr-only">{label}</span>
+                </Link>
+              ))}
             </div>
           </div>
+
+          {/* Quick Links */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Shop</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/products" className="text-muted-foreground hover:text-primary">
-                  All Products
-                </Link>
-              </li>
-              <li>
-                <Link href="/categories" className="text-muted-foreground hover:text-primary">
-                  Categories
-                </Link>
-              </li>
-              <li>
-                <Link href="/deals" className="text-muted-foreground hover:text-primary">
-                  Deals & Offers
-                </Link>
-              </li>
-              <li>
-                <Link href="/new-arrivals" className="text-muted-foreground hover:text-primary">
-                  New Arrivals
-                </Link>
-              </li>
-              <li>
-                <Link href="/best-sellers" className="text-muted-foreground hover:text-primary">
-                  Best Sellers
-                </Link>
-              </li>
+            <h3
+              className="mb-5 text-sm font-semibold tracking-widest uppercase text-[#fafafa]"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              Quick Links
+            </h3>
+            <ul className="space-y-3 text-sm">
+              {[
+                { href: "/", label: "Home" },
+                { href: "/products", label: "Collection" },
+                { href: "/about", label: "About Us" },
+                { href: "/contact", label: "Contact" },
+                { href: "/categories", label: "Categories" },
+              ].map(item => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-[#a1a1a1] hover:text-[#d4af37] transition-colors duration-300"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
+
+          {/* Categories */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Account</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/login" className="text-muted-foreground hover:text-primary">
-                  Login
-                </Link>
-              </li>
-              <li>
-                <Link href="/register" className="text-muted-foreground hover:text-primary">
-                  Register
-                </Link>
-              </li>
-              <li>
-                <Link href="/profile" className="text-muted-foreground hover:text-primary">
-                  My Account
-                </Link>
-              </li>
-              <li>
-                <Link href="/orders" className="text-muted-foreground hover:text-primary">
-                  Order History
-                </Link>
-              </li>
-              <li>
-                <Link href="/wishlist" className="text-muted-foreground hover:text-primary">
-                  Wishlist
-                </Link>
-              </li>
+            <h3
+              className="mb-5 text-sm font-semibold tracking-widest uppercase text-[#fafafa]"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              Categories
+            </h3>
+            <ul className="space-y-3 text-sm">
+              {[
+                { href: "/categories", label: "For Her" },
+                { href: "/categories", label: "For Him" },
+                { href: "/categories", label: "Unisex" },
+                { href: "/categories", label: "Oud Collection" },
+                { href: "/categories", label: "Gift Sets" },
+              ].map(item => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="text-[#a1a1a1] hover:text-[#d4af37] transition-colors duration-300"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
+
+          {/* Contact */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Support</h3>
-            <ul className="space-y-2 text-sm">
+            <h3
+              className="mb-5 text-sm font-semibold tracking-widest uppercase text-[#fafafa]"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              Contact Us
+            </h3>
+            <ul className="space-y-3 text-sm">
               <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-primary">
-                  Contact Us
-                </Link>
+                <a
+                  href="tel:+923165658165"
+                  className="text-[#a1a1a1] hover:text-[#d4af37] transition-colors duration-300 flex items-center gap-2"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  +92 316 565 8165
+                </a>
               </li>
               <li>
-                <Link href="/faq" className="text-muted-foreground hover:text-primary">
-                  FAQs
-                </Link>
+                <a
+                  href="mailto:thechocolatesfactory@icloud.com"
+                  className="text-[#a1a1a1] hover:text-[#d4af37] transition-colors duration-300 break-all"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  thechocolatesfactory@icloud.com
+                </a>
               </li>
               <li>
-                <Link href="/shipping" className="text-muted-foreground hover:text-primary">
-                  Shipping & Returns
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="text-muted-foreground hover:text-primary">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="text-muted-foreground hover:text-primary">
-                  Terms & Conditions
-                </Link>
+                <address
+                  className="text-[#a1a1a1] not-italic text-xs leading-relaxed"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  Civic Center, Bahria Town<br />
+                  Phase 4, Islamabad
+                </address>
               </li>
             </ul>
           </div>
         </div>
-        <div className="mt-8 border-t pt-8">
+
+        {/* Bottom bar */}
+        <div className="mt-12 border-t border-[#262626] pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-center text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} The Chocolate Factory. All rights reserved.
+            <p
+              className="text-center text-xs text-[#a1a1a1]"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              &copy; {new Date().getFullYear()} AyeshaAslam. All rights reserved.
             </p>
-            <div className="flex items-center gap-4">
-              <img src="/placeholder.svg?height=30&width=50" alt="Visa" className="h-8" />
-              <img src="/placeholder.svg?height=30&width=50" alt="Mastercard" className="h-8" />
-              <img src="/placeholder.svg?height=30&width=50" alt="PayPal" className="h-8" />
-              <img src="/placeholder.svg?height=30&width=50" alt="Apple Pay" className="h-8" />
+            <div className="flex items-center gap-6">
+              {[
+                { href: "/privacy", label: "Privacy Policy" },
+                { href: "/terms", label: "Terms of Service" },
+                { href: "/shipping", label: "Shipping & Returns" },
+              ].map(item => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-xs text-[#a1a1a1] hover:text-[#d4af37] transition-colors duration-300"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

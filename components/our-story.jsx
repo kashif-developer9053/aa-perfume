@@ -1,220 +1,145 @@
 "use client"
 
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function OurStory() {
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1,
-      transition: { 
-        staggerChildren: 0.3,
-        delayChildren: 0.2
-      } 
-    }
-  }
-  
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.5 } }
-  }
-
   return (
-    <section className="min-h-screen  text-white overflow-hidden py-20">
-      {/* Decorative elements with brownish colors */}
-      <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-[#C8815F]/20 blur-3xl"></div>
-      <div className="absolute bottom-20 left-20 w-64 h-64 rounded-full bg-[#8B5A2B]/20 blur-3xl"></div>
-      
-      <div className="container mx-auto px-4">
-        <motion.div 
-          className="max-w-6xl mx-auto"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={containerVariants}
-        >
-          {/* Headline - reduced size */}
-          <motion.h1 
-            className="text-4xl md:text-6xl text-black font-light tracking-tight mb-6 uppercase text-center"
-            variants={itemVariants}
-          >
-            Our <span className="text-[#C8815F]">Delicious</span> Story
-          </motion.h1>
-          
-          {/* Subtitle */}
-          <motion.p 
-            className="text-lg md:text-xl text-center max-w-3xl mx-auto mb-12 italic text-gray-900"
-            variants={itemVariants}
-          >
-            From humble beginnings to culinary excellence
-          </motion.p>
-          
-          {/* Timeline */}
-          <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16" variants={containerVariants}>
-            {/* First section */}
-            <motion.div className="relative" variants={itemVariants}>
-              <div className="absolute -left-4 top-0 h-full w-1 bg-gradient-to-b from-[#C8815F] to-[#A66B4F] rounded-full hidden md:block"></div>
-              <div className="absolute -left-6 top-0 w-5 h-5 rounded-full bg-[#C8815F] hidden md:block"></div>
-              <h2 className="text-2xl font-bold mb-3 text-[#C8815F]">Starting from Home</h2>
-              <p className="text-gray-600 mb-4">
-The Chocolates Factory began as a home-based business in Rawalpindi.
- We sold imported chocolates and snacks through Instagram and WhatsApp.
- Every order was packed with care by our family and delivered locally.
-              </p>
-              <div className="relative h-60 w-full rounded-lg overflow-hidden mb-6">
-             <Image 
-                src="/images/opening.png" 
-                alt="Bakery beginnings" 
-                fill 
-                className="object-cover"
-                />
-              </div>
-            </motion.div>
-            
-            {/* Second section */}
-            <motion.div className="relative" variants={itemVariants}>
-              <div className="absolute -left-4 top-0 h-full w-1 bg-gradient-to-b from-[#A66B4F] to-[#8B5A2B] rounded-full hidden md:block"></div>
-              <div className="absolute -left-6 top-0 w-5 h-5 rounded-full bg-[#A66B4F] hidden md:block"></div>
-              <h2 className="text-2xl font-bold mb-3 text-[#A66B4F]">Growing Online</h2>
-              <p className="text-gray-600 mb-4">
-As demand grew, we expanded to Facebook and started running ads.
- More customers discovered us, and our daily orders increased.
- We offered bank transfers and cash-on-delivery for convenience.
-              </p>
-              <div className="relative h-60 w-full rounded-lg overflow-hidden mb-6">
-                <Image 
-                  src="/images/growing.png" 
-                  alt="Bakers at work" 
-                  fill 
-                  className="object-cover"
-                />
-              </div>
-            </motion.div>
-            
-            {/* Third section */}
-            <motion.div className="relative" variants={itemVariants}>
-              <div className="absolute -left-4 top-0 h-full w-1 bg-gradient-to-b from-[#8B5A2B] to-[#6F4E37] rounded-full hidden md:block"></div>
-              <div className="absolute -left-6 top-0 w-5 h-5 rounded-full bg-[#8B5A2B] hidden md:block"></div>
-              <h2 className="text-2xl font-bold mb-3 text-[#8B5A2B]">Storage & Team Expansion</h2>
-              <p className="text-gray-600 mb-4">
- To manage inventory better, we rented a small storage room.
- This made packing and delivery faster and more organized.
- We also hired a helper to assist with deliveries.
-              </p>
-              <div className="relative h-60 w-full rounded-lg overflow-hidden mb-6">
-                <Image 
-                  src="/images/storage.png" 
-                  alt="Bakery growth" 
-                  fill 
-                  className="object-cover"
-                />
-              </div>
-            </motion.div>
-            
-            {/* Fourth section */}
-            <motion.div className="relative" variants={itemVariants}>
-              <div className="absolute -left-4 top-0 h-full w-1 bg-gradient-to-b from-[#6F4E37] to-[#C8815F] rounded-full hidden md:block"></div>
-              <div className="absolute -left-6 top-0 w-5 h-5 rounded-full bg-[#6F4E37] hidden md:block"></div>
-              <h2 className="text-2xl font-bold mb-3 text-[#6F4E37]">Opening Our Store</h2>
-              <p className="text-gray-600 mb-4">
-With your support, we opened our first physical shop in a local market.
- Now, we proudly serve customers both online and in-store.
- The Chocolates Factory continues to grow with love and dedication.
-              </p>
-              <div className="relative h-60 w-full rounded-lg overflow-hidden mb-6">
-                <Image 
-                  src="/images/starting.png" 
-                  alt="Modern bakery interior" 
-                  fill 
-                  className="object-cover"
-                />
-              </div>
-            </motion.div>
-          </motion.div>
-          
-          {/* Values section */}
-          <motion.div variants={containerVariants} className="mb-16">
-            <motion.h2 
-              className="text-3xl md:text-4xl font-light uppercase text-center mb-12"
-              variants={itemVariants}
-            >
-              Our <span className="text-[#C8815F]">Values</span>
-            </motion.h2>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <motion.div 
-                className="bg-secondary backdrop-blur-lg p-6 rounded-xl border border-[#C8815F]/20 hover:border-[#C8815F]/50 transition-all"
-                variants={itemVariants}
-                whileHover={{ y: -5, boxShadow: "0 10px 30px -15px rgba(200, 129, 95, 0.3)" }}
-              >
-                <div className="w-14 h-14 bg-gradient-to-br from-[#C8815F] to-[#A66B4F] rounded-full flex items-center justify-center mb-4">
-                  <span className="text-xl">🌟</span>
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-black">Quality</h3>
-                <p className="text-black text-sm">
-                  We never compromise on ingredients or processes. Every item is crafted with the finest materials and utmost care.
-                </p>
-              </motion.div>
-              
-              <motion.div 
-                className="bg-secondary p-6 rounded-xl border border-[#A66B4F]/20 hover:border-[#A66B4F]/50 transition-all"
-                variants={itemVariants}
-                whileHover={{ y: -5, boxShadow: "0 10px 30px -15px rgba(166, 107, 79, 0.3)" }}
-              >
-                <div className="w-14 h-14 bg-gradient-to-br from-[#A66B4F] to-[#8B5A2B] rounded-full flex items-center justify-center mb-4">
-                  <span className="text-xl">💖</span>
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-black">Passion</h3>
-                <p className="text-black text-sm">
-                  Baking isn't just our profession—it's our calling. We pour our hearts into every creation that leaves our kitchen.
-                </p>
-              </motion.div>
-              
-              <motion.div 
-                className="bg-secondary backdrop-blur-lg p-6 rounded-xl border border-[#8B5A2B]/20 hover:border-[#8B5A2B]/50 transition-all"
-                variants={itemVariants}
-                whileHover={{ y: -5, boxShadow: "0 10px 30px -15px rgba(139, 90, 43, 0.3)" }}
-              >
-                <div className="w-14 h-14 bg-gradient-to-br from-[#8B5A2B] to-[#6F4E37] rounded-full flex items-center justify-center mb-4">
-                  <span className="text-xl">🌱</span>
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-black">Community</h3>
-                <p className="text-black text-sm">
-                  We're proud to be part of Islamabad's fabric, supporting local farmers and engaging with our neighborhood.
-                </p>
-              </motion.div>
-              
-              <motion.div 
-                className="bg-secondary backdrop-blur-lg p-6 rounded-xl border border-[#6F4E37]/20 hover:border-[#6F4E37]/50 transition-all"
-                variants={itemVariants}
-                whileHover={{ y: -5, boxShadow: "0 10px 30px -15px rgba(111, 78, 55, 0.3)" }}
-              >
-                <div className="w-14 h-14 bg-gradient-to-br from-[#6F4E37] to-[#5D4037] rounded-full flex items-center justify-center mb-4">
-                  <span className="text-xl">🚀</span>
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-black">Innovation</h3>
-                <p className="text-black text-sm">
-                  While respecting tradition, we constantly experiment with new flavors and techniques to surprise and delight.
-                </p>
-              </motion.div>
+    <section className="py-20 bg-[#0d0d0d] overflow-hidden relative">
+      {/* Ambient glow */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-[#d4af37]/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full bg-[#d4af37]/5 blur-3xl pointer-events-none" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+
+          {/* Left: Image */}
+          <div className="relative">
+            <div className="relative h-[500px] overflow-hidden" style={{ borderRadius: "4px" }}>
+              <img
+                src="/images/opening.png"
+                alt="AyeshaAslam Perfume Story"
+                className="h-full w-full object-cover"
+                style={{ filter: "brightness(0.8) saturate(1.1)" }}
+              />
+              {/* Gold border frame */}
+              <div className="absolute inset-0 border border-[#d4af37]/30" style={{ borderRadius: "4px" }} />
+              {/* Gold corner accents */}
+              <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-[#d4af37]" />
+              <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-[#d4af37]" />
+              <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-[#d4af37]" />
+              <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-[#d4af37]" />
             </div>
-          </motion.div>
-          
-          {/* CTA section */}
-          <motion.div 
-            className="text-center"
-            variants={itemVariants}
-          >
-            <h2 className="text-2xl text-gray-600 md:text-3xl font-light mb-4">Join Our Sweet Journey</h2>
-            <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-              Come experience the magic of Chalet Cafe. Whether it's your first visit or your hundredth, we can't wait to serve you.
+
+            {/* Floating stats card */}
+            <div
+              className="absolute -bottom-6 -right-6 bg-[#111111] border border-[#262626] p-6 shadow-2xl"
+              style={{ borderRadius: "4px", minWidth: "180px" }}
+            >
+              <div className="flex flex-col gap-4">
+                {[
+                  { value: "5+", label: "Years Experience" },
+                  { value: "100+", label: "Brand Partners" },
+                  { value: "50K+", label: "Happy Customers" },
+                ].map(stat => (
+                  <div key={stat.label}>
+                    <span
+                      className="text-2xl font-bold text-[#d4af37] block"
+                      style={{ fontFamily: "'Playfair Display', serif" }}
+                    >
+                      {stat.value}
+                    </span>
+                    <span
+                      className="text-[10px] tracking-widest text-[#a1a1a1] uppercase"
+                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    >
+                      {stat.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Content */}
+          <div className="flex flex-col">
+            <span
+              className="text-xs tracking-[0.3em] text-[#d4af37] uppercase mb-4"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              Our Story
+            </span>
+
+            <h2
+              className="text-4xl md:text-5xl font-bold text-[#fafafa] mb-6 leading-tight"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Crafting <span className="text-[#d4af37] italic">Elegance</span>
+              <br />
+              Since Day One
+            </h2>
+
+            <p
+              className="text-[#a1a1a1] leading-relaxed mb-4 text-sm"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              AyeshaAslam was born from a passion for fine fragrances and a commitment to bringing luxury perfumes within everyone's reach. Our journey began with a simple belief — everyone deserves to experience the confidence that comes with wearing an exquisite scent.
             </p>
-           
-          </motion.div>
-        </motion.div>
+
+            <p
+              className="text-[#a1a1a1] leading-relaxed mb-8 text-sm"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              Today, we curate the finest collection of original and inspired perfumes, each selected for its exceptional quality, longevity, and unique character. From timeless classics to contemporary masterpieces, our collection caters to every taste and occasion.
+            </p>
+
+            {/* Values */}
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              {[
+                { icon: "✦", title: "100% Authentic", desc: "Only genuine, original fragrances" },
+                { icon: "✦", title: "Premium Quality", desc: "Handpicked from world's finest" },
+                { icon: "✦", title: "Fast Delivery", desc: "Swift delivery to your door" },
+                { icon: "✦", title: "Expert Curation", desc: "Curated by fragrance experts" },
+              ].map(item => (
+                <div key={item.title} className="flex gap-3">
+                  <span className="text-[#d4af37] mt-0.5 text-xs">{item.icon}</span>
+                  <div>
+                    <p
+                      className="text-[#fafafa] text-sm font-semibold mb-0.5"
+                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    >
+                      {item.title}
+                    </p>
+                    <p
+                      className="text-[#a1a1a1] text-xs"
+                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    >
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <Link href="/about">
+              <button
+                className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:scale-105 self-start"
+                style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  backgroundColor: "#d4af37",
+                  color: "#0a0a0a",
+                  border: "none",
+                  cursor: "pointer",
+                  letterSpacing: "0.1em",
+                }}
+              >
+                Learn More About Us
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   )

@@ -50,109 +50,161 @@ export default function FeaturedProducts() {
 
   if (loading) {
     return (
-      <section className="py-12 md:py-16 lg:py-20">
-        <div className="container">
-          <div className="mb-8 flex flex-col items-center text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Our Menu</h2>
-            <p className="mt-4 max-w-[700px] text-muted-foreground">
-              Handcrafted with love and the finest ingredients - our most popular bakery items
-            </p>
-          </div>
-          <div className="flex justify-center items-center min-h-[400px]">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
-          </div>
+      <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-12 h-12 border-2 border-[#d4af37] border-t-transparent rounded-full animate-spin" />
+          <span className="text-[#a1a1a1] text-sm" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+            Loading collection...
+          </span>
         </div>
-      </section>
+      </div>
     );
   }
 
   if (error) {
     return (
-      <section className="py-12 md:py-16 lg:py-20">
-        <div className="container">
-          <div className="mb-8 flex flex-col items-center text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Our Menu</h2>
-          </div>
-          <div className="flex justify-center items-center min-h-[200px]">
-            <p className="text-destructive">{error}. Please try again later.</p>
-          </div>
-        </div>
-      </section>
+      <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
+        <p className="text-[#a1a1a1]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+          {error}. Please try again later.
+        </p>
+      </div>
     );
   }
 
   return (
-    <section className="py-12 md:py-16 lg:py-20">
-      <div className="container">
-        <div className="mb-8 flex flex-col items-center text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Our Menu</h2>
-          <p className="mt-4 max-w-[700px] text-muted-foreground">
-            Handcrafted with love and the finest ingredients - our most popular bakery items
+    <div className="min-h-screen bg-[#0a0a0a]">
+      {/* Page Header */}
+      <section className="py-20 bg-[#0d0d0d] border-b border-[#262626]">
+        <div className="container text-center">
+          <span
+            className="text-xs tracking-[0.3em] text-[#d4af37] uppercase mb-3 block"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            Explore
+          </span>
+          <h1
+            className="text-4xl md:text-6xl font-bold text-[#fafafa] mb-4"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            Our <span className="text-[#d4af37] italic">Collection</span>
+          </h1>
+          <p
+            className="max-w-[600px] mx-auto text-[#a1a1a1] text-sm leading-relaxed"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            Discover our complete range of luxury fragrances — each one carefully curated to elevate your presence and leave a lasting impression.
           </p>
+          <div className="mt-4 h-px w-16 bg-[#d4af37] mx-auto" />
         </div>
-        {products.length > 0 ? (
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {products.map((product) => (
-              <Card key={product._id} className="overflow-hidden">
-                <Link href={`/products/${product._id}`}>
-                  <div className="relative h-48 w-full overflow-hidden">
-                    {product.images && product.images.length > 0 ? (
-                      <img
-                        src={product.images[0]}
-                        alt={product.name}
-                        className="h-full w-full object-cover transition-transform hover:scale-105"
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src = `https://via.placeholder.com/400x300?text=${encodeURIComponent(product.name)}`;
+      </section>
+
+      {/* Products Grid */}
+      <section className="py-16">
+        <div className="container">
+          {products.length > 0 ? (
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {products.map((product) => {
+                const categoryName = typeof product.category === "object" && product.category?.name
+                  ? product.category.name
+                  : typeof product.category === "string"
+                  ? product.category
+                  : "Fragrance";
+
+                return (
+                  <div
+                    key={product._id}
+                    className="group relative bg-[#111111] border border-[#262626] overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(212,175,55,0.15)] hover:border-[#d4af37]/30"
+                    style={{ borderRadius: "8px" }}
+                  >
+                    {/* Category badge */}
+                    <div className="absolute top-3 right-3 z-10">
+                      <span
+                        className="px-2 py-1 text-[10px] font-bold tracking-widest uppercase"
+                        style={{
+                          fontFamily: "'Montserrat', sans-serif",
+                          backgroundColor: "#d4af37",
+                          color: "#0a0a0a",
+                          borderRadius: "3px",
                         }}
-                      />
-                    ) : (
-                      <div className="h-full w-full bg-muted flex items-center justify-center">
-                        <span className="text-muted-foreground">{product.name}</span>
+                      >
+                        {categoryName}
+                      </span>
+                    </div>
+
+                    <Link href={`/products/${product._id}`}>
+                      <div className="relative h-64 w-full overflow-hidden bg-[#0d0d0d]">
+                        {product.images && product.images.length > 0 ? (
+                          <img
+                            src={product.images[0]}
+                            alt={product.name}
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            onError={(e) => {
+                              e.target.onerror = null;
+                              e.target.src = `https://via.placeholder.com/400x300?text=${encodeURIComponent(product.name)}`;
+                            }}
+                          />
+                        ) : (
+                          <div className="h-full w-full flex items-center justify-center">
+                            <span className="text-[#a1a1a1]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                              {product.name}
+                            </span>
+                          </div>
+                        )}
+                        <div className="absolute inset-0 bg-[#d4af37]/0 group-hover:bg-[#d4af37]/10 transition-all duration-300" />
                       </div>
-                    )}
-                  </div>
-                </Link>
-                <div className="p-5">
-                  <div className="flex justify-between items-start mb-2">
-                    <Link href={`/products/${product._id}`} className="hover:underline">
-                      <h3 className="font-bold text-lg">{product.name}</h3>
                     </Link>
-                    <span className="text-primary font-semibold">{formatPrice(product.price)}</span>
+
+                    <div className="p-5">
+                      <Link href={`/products/${product._id}`}>
+                        <h3
+                          className="font-bold text-lg text-[#fafafa] mb-1 hover:text-[#d4af37] transition-colors leading-tight"
+                          style={{ fontFamily: "'Playfair Display', serif" }}
+                        >
+                          {product.name}
+                        </h3>
+                      </Link>
+                      <p
+                        className="text-[#a1a1a1] text-xs mb-4 line-clamp-2 leading-relaxed"
+                        style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      >
+                        {product.description}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <span
+                          className="text-lg font-semibold text-[#d4af37]"
+                          style={{ fontFamily: "'Montserrat', sans-serif" }}
+                        >
+                          {formatPrice(product.price)}
+                        </span>
+                        <button
+                          onClick={() => handleAddToCart(product)}
+                          className="inline-flex items-center gap-1 px-3 py-2 text-xs font-semibold tracking-wide uppercase transition-all duration-300 hover:scale-105"
+                          style={{
+                            fontFamily: "'Montserrat', sans-serif",
+                            backgroundColor: "#d4af37",
+                            color: "#0a0a0a",
+                            border: "none",
+                            cursor: "pointer",
+                            borderRadius: "4px",
+                          }}
+                        >
+                          <CirclePlus className="h-3 w-3" /> Add
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">{product.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-xs px-2 py-1 bg-secondary text-primary rounded-full">
-                      {/* Handle both populated and non-populated category */}
-                      {typeof product.category === 'object' && product.category?.name 
-                        ? product.category.name 
-                        : typeof product.category === 'string' 
-                        ? product.category 
-                        : "Uncategorized"}
-                    </span>
-                    <Button
-                      variant="ghost"
-                      className="inline-flex items-center justify-center gap-2 text-sm font-medium text-primary hover:text-primary/90 hover:bg-secondary"
-                      onClick={() => handleAddToCart(product)}
-                    >
-                      <CirclePlus className="mr-1 h-4 w-4" /> Add to Cart
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-10">
-            <p>No products available at the moment.</p>
-          </div>
-        )}
-        <div className="mt-10 flex justify-center">
-          <Button asChild size="lg">
-            <Link href="/menu">View Full Menu</Link>
-          </Button>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="text-center py-20">
+              <p className="text-[#a1a1a1]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                No fragrances available at the moment.
+              </p>
+            </div>
+          )}
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
