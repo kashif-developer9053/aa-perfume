@@ -17,7 +17,7 @@ export default function OurStory() {
             <div className="relative h-[500px] overflow-hidden" style={{ borderRadius: "4px" }}>
               <img
                 src="/images/opening.png"
-                alt="AyeshaAslam Perfume Story"
+                alt="Aslam Baig Fragrance Perfume Story"
                 className="h-full w-full object-cover"
                 style={{ filter: "brightness(0.8) saturate(1.1)" }}
               />
@@ -82,7 +82,7 @@ export default function OurStory() {
               className="text-[#a1a1a1] leading-relaxed mb-4 text-sm"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              AyeshaAslam was born from a passion for fine fragrances and a commitment to bringing luxury perfumes within everyone's reach. Our journey began with a simple belief — everyone deserves to experience the confidence that comes with wearing an exquisite scent.
+              Aslam Baig Fragrance was born from a passion for fine fragrances and a commitment to bringing luxury perfumes within everyone's reach. Our journey began with a simple belief — everyone deserves to experience the confidence that comes with wearing an exquisite scent.
             </p>
 
             <p

@@ -15,7 +15,7 @@ export default function NewsletterSection() {
       setEmail("")
       toast({
         title: "Successfully Subscribed!",
-        description: "Welcome to AyeshaAslam's exclusive fragrance world.",
+        description: "Welcome to Aslam Baig Fragrance's exclusive fragrance world.",
       })
     }, 1000)
   }

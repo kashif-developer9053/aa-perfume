@@ -17,7 +17,7 @@ export default function Footer() {
                   letterSpacing: "0.1em",
                 }}
               >
-                AyeshaAslam
+                Aslam Baig Fragrance
               </span>
             </Link>
             <p
@@ -151,7 +151,7 @@ export default function Footer() {
               className="text-center text-xs text-[#a1a1a1]"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              &copy; {new Date().getFullYear()} AyeshaAslam. All rights reserved.
+              &copy; {new Date().getFullYear()} Aslam Baig Fragrance. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               {[

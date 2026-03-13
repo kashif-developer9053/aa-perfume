@@ -358,7 +358,7 @@ const faqs = [
                 className="text-3xl md:text-4xl font-bold text-[#fafafa]"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                Visit <span className="text-[#d4af37] italic">AyeshaAslam</span>
+                Visit <span className="text-[#d4af37] italic">Aslam Baig Fragrance</span>
               </h2>
               <div className="mt-4 h-px w-16 bg-[#d4af37] mx-auto" />
             </div>
@@ -372,7 +372,7 @@ const faqs = [
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="AyeshaAslam Location"
+                title="Aslam Baig Fragrance Location"
               />
             </div>
           </div>
@@ -440,7 +440,7 @@ const faqs = [
                 className="text-[#a1a1a1] text-sm mb-8"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                Subscribe to receive exclusive offers, new arrivals, and fragrance tips from AyeshaAslam.
+                Subscribe to receive exclusive offers, new arrivals, and fragrance tips from Aslam Baig Fragrance.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <input

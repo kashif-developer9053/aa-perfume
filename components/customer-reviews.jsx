@@ -7,7 +7,7 @@ export default function CustomerReviews() {
       name: "Areeba K.",
       role: "Verified Buyer",
       review:
-        "The Royal Oud Intense is absolutely divine! The longevity is incredible — I get compliments all day long. AyeshaAslam has become my go-to for all my fragrance needs.",
+        "The Royal Oud Intense is absolutely divine! The longevity is incredible — I get compliments all day long. Aslam Baig Fragrance has become my go-to for all my fragrance needs.",
       rating: 5,
       location: "Rawalpindi",
       product: "Royal Oud Intense",

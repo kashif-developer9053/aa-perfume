@@ -34,7 +34,7 @@ export default function AboutPage() {
     {
       step: "01",
       title: "Founding Vision",
-      text: "AyeshaAslam began as a passion project — bringing world-class luxury fragrances to perfume lovers in Pakistan. We started by curating an exclusive selection of authentic, premium scents.",
+      text: "Aslam Baig Fragrance began as a passion project — bringing world-class luxury fragrances to perfume lovers in Pakistan. We started by curating an exclusive selection of authentic, premium scents.",
     },
     {
       step: "02",
@@ -88,7 +88,7 @@ export default function AboutPage() {
                 className="text-lg text-[#a1a1a1] max-w-xl leading-relaxed mb-8"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                Founded with a love for luxury fragrances, AyeshaAslam has been Pakistan's trusted destination for authentic premium perfumes since 2019.
+                Founded with a love for luxury fragrances, Aslam Baig Fragrance has been Pakistan's trusted destination for authentic premium perfumes since 2019.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/products">
@@ -224,11 +224,11 @@ export default function AboutPage() {
                 className="text-xl md:text-2xl text-[#fafafa] mb-6 leading-relaxed italic"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                AyeshaAslam is where luxury meets accessibility. Every fragrance tells a story, and we help you find the scent that tells yours.
+                Aslam Baig Fragrance is where luxury meets accessibility. Every fragrance tells a story, and we help you find the scent that tells yours.
               </blockquote>
               <div className="h-px w-16 bg-[#d4af37] mx-auto mb-4" />
               <p className="font-semibold text-[#d4af37] text-sm" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                Ayesha Aslam
+                Aslam Baig Fragrance
               </p>
               <p className="text-xs text-[#a1a1a1]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                 Founder

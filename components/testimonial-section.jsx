@@ -15,7 +15,7 @@ export default function TestimonialSection() {
       name: "Michael Chen",
       role: "Verified Buyer",
       content:
-        "Found my signature scent at AyeshaAslam. The website is easy to navigate, checkout was seamless, and the perfume arrived beautifully packaged. Will definitely order again!",
+        "Found my signature scent at Aslam Baig Fragrance. The website is easy to navigate, checkout was seamless, and the perfume arrived beautifully packaged. Will definitely order again!",
       stars: 5,
     },
     {

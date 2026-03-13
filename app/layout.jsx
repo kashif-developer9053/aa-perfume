@@ -17,7 +17,7 @@ const montserrat = Montserrat({
 })
 
 export const metadata = {
-  title: "AyeshaAslam - Luxury Fragrances & Premium Perfumes",
+  title: "Aslam Baig Fragrance - Luxury Fragrances & Premium Perfumes",
   description: "Discover exquisite luxury fragrances. Premium handcrafted perfumes that define elegance and sophistication.",
 }
 

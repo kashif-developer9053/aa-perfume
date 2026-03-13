@@ -38,7 +38,7 @@ export default function HomePage() {
         <OurStory />
         <CustomerReviews />
 
-        {/* The AyeshaAslam Promise */}
+        {/* The Aslam Baig Fragrance Promise */}
         <section className="py-20 bg-[#111111] border-y border-[#262626]">
           <div className="container">
             <div className="mb-12 flex flex-col items-center text-center">
@@ -52,7 +52,7 @@ export default function HomePage() {
                 className="text-4xl md:text-5xl font-bold text-[#fafafa]"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                The <span className="italic text-[#d4af37]">AyeshaAslam</span> Promise
+                The <span className="italic text-[#d4af37]">Aslam Baig Fragrance</span> Promise
               </h2>
               <div className="mt-4 h-px w-16 bg-[#d4af37]" />
             </div>
