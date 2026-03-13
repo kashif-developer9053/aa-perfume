@@ -15,7 +15,7 @@ export async function POST(req) {
     
     // Check if user is authenticated
     let authenticatedUser = null;
-    const token = getTokenFromCookies();
+    const token = await getTokenFromCookies();
     
     if (token) {
       const decoded = verifyToken(token);
@@ -165,8 +165,8 @@ export async function GET(req) {
   try {
     await connectDB();
     
-    const token = getTokenFromCookies();
-    
+    const token = await getTokenFromCookies();
+
     if (!token) {
       return NextResponse.json(
         { success: false, message: 'Authentication required' },

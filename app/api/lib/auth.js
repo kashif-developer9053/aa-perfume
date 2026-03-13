@@ -13,6 +13,25 @@ export const generateToken = (id) => {
   })
 }
 
+// Verify a JWT token and return decoded payload, or null on failure
+export const verifyToken = (token) => {
+  try {
+    return jwt.verify(token, JWT_SECRET)
+  } catch {
+    return null
+  }
+}
+
+// Get token string from cookies (async — awaits cookie store)
+export const getTokenFromCookies = async () => {
+  try {
+    const cookieStore = await cookies()
+    return cookieStore.get("token")?.value || null
+  } catch {
+    return null
+  }
+}
+
 // Set JWT cookie
 export const setTokenCookie = (token) => {
   cookies().set("token", token, {

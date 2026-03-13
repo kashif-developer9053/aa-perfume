@@ -8,8 +8,8 @@ export async function GET() {
   try {
     await connectDB();
     
-    const token = getTokenFromCookies();
-    
+    const token = await getTokenFromCookies();
+
     if (!token) {
       return NextResponse.json(
         { success: false, message: 'Not authenticated' },
