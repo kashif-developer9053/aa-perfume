@@ -1,9 +1,9 @@
 // /app/api/payment/route.js
 import { NextResponse } from 'next/server';
-import connectDB from '@/app/lib/db';
-import Order from '@/app/lib/models/Order';
-import { protect } from '@/app/lib/auth';
-import { formatError } from '@/app/lib/utils';
+import connectDB from '@/app/api/lib/db';
+import Order from '@/app/api/lib/models/Order';
+import { protect } from '@/app/api/lib/auth';
+import { formatError } from '@/app/api/lib/utils';
 
 // Process payment
 export async function POST(req) {

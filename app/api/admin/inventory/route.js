@@ -1,9 +1,9 @@
 // /app/api/admin/inventory/route.js
 import { NextResponse } from 'next/server';
-import connectDB from '@/app/lib/db';
-import Product from '@/app/lib/models/Product';
-import { admin } from '@/app/lib/auth';
-import { formatError } from '@/app/lib/utils';
+import connectDB from '@/app/api/lib/db';
+import Product from '@/app/api/lib/models/Product';
+import { admin } from '@/app/api/lib/auth';
+import { formatError } from '@/app/api/lib/utils';
 
 // Get inventory status (admin only)
 export async function GET(req) {

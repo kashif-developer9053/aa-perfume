@@ -1,9 +1,9 @@
 // /app/api/cart/route.js
 import { NextResponse } from 'next/server';
-import connectDB from '@/app/lib/db';
-import Product from '@/app/lib/models/Product';
-import { protect } from '@/app/lib/auth';
-import { formatError, calculateTotals } from '@/app/lib/utils';
+import connectDB from '@/app/api/lib/db';
+import Product from '@/app/api/lib/models/Product';
+import { protect } from '@/app/api/lib/auth';
+import { formatError, calculateTotals } from '@/app/api/lib/utils';
 import { cookies } from 'next/headers';
 
 // Get cart

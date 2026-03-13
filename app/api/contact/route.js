@@ -1,8 +1,8 @@
 // /app/api/contact/route.js
 import { NextResponse } from 'next/server';
-import connectDB from '@/app/lib/db';
-import Contact from '@/app/lib/models/Contact';
-import { formatError } from '@/app/lib/utils';
+import connectDB from '@/app/api/lib/db';
+import Contact from '@/app/api/lib/models/Contact';
+import { formatError } from '@/app/api/lib/utils';
 import nodemailer from 'nodemailer';
 
 // Process contact form submissions
@@ -71,7 +71,7 @@ export async function GET(req) {
     await connectDB();
     
     // Use admin middleware
-    const { admin } = await import('@/app/lib/auth');
+    const { admin } = await import('@/app/api/lib/auth');
     const result = await admin(req);
     
     if (result instanceof NextResponse) {

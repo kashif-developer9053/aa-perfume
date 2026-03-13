@@ -1,9 +1,9 @@
 // /app/api/auth/reset-password/route.js
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
-import connectDB from '@/app/lib/db';
-import User from '@/app/lib/models/User';
-import { formatError } from '@/app/lib/utils';
+import connectDB from '@/app/api/lib/db';
+import User from '@/app/api/lib/models/User';
+import { formatError } from '@/app/api/lib/utils';
 
 // Generate reset token
 export async function POST(req) {

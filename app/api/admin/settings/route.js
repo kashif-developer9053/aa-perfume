@@ -1,9 +1,9 @@
 // /app/api/admin/settings/route.js
 import { NextResponse } from 'next/server';
-import connectDB from '@/app/lib/db';
-import Setting from '@/app/lib/models/Setting';
-import { admin } from '@/app/lib/auth';
-import { formatError } from '@/app/lib/utils';
+import connectDB from '@/app/api/lib/db';
+import Setting from '@/app/api/lib/models/Setting';
+import { admin } from '@/app/api/lib/auth';
+import { formatError } from '@/app/api/lib/utils';
 
 // Get settings (admin only)
 export async function GET(req) {

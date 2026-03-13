@@ -1,10 +1,10 @@
 // /app/api/user/wishlist/route.js
 import { NextResponse } from 'next/server';
-import connectDB from '@/app/lib/db';
-import User from '@/app/lib/models/User';
-import Product from '@/app/lib/models/Product';
-import { protect } from '@/app/lib/auth';
-import { formatError } from '@/app/lib/utils';
+import connectDB from '@/app/api/lib/db';
+import User from '@/app/api/lib/models/User';
+import Product from '@/app/api/lib/models/Product';
+import { protect } from '@/app/api/lib/auth';
+import { formatError } from '@/app/api/lib/utils';
 import mongoose from 'mongoose';
 
 // Get user's wishlist

@@ -1,9 +1,9 @@
 // /app/api/admin/discounts/[id]/route.js
 import { NextResponse } from 'next/server';
-import connectDB from '@/app/lib/db';
-import Discount from '@/app/lib/models/Discount';
-import { admin } from '@/app/lib/auth';
-import { formatError } from '@/app/lib/utils';
+import connectDB from '@/app/api/lib/db';
+import Discount from '@/app/api/lib/models/Discount';
+import { admin } from '@/app/api/lib/auth';
+import { formatError } from '@/app/api/lib/utils';
 
 // Get discount details (admin only)
 export async function GET(req, { params }) {

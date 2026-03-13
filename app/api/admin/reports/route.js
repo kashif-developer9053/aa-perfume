@@ -1,12 +1,12 @@
 // /app/api/admin/reports/route.js
 import { NextResponse } from 'next/server';
-import connectDB from '@/app/lib/db';
-import User from '@/app/lib/models/User';
-import Product from '@/app/lib/models/Product';
-import Order from '@/app/lib/models/Order';
-import Category from '@/app/lib/models/Category';
-import { admin } from '@/app/lib/auth';
-import { formatError } from '@/app/lib/utils';
+import connectDB from '@/app/api/lib/db';
+import User from '@/app/api/lib/models/User';
+import Product from '@/app/api/lib/models/Product';
+import Order from '@/app/api/lib/models/Order';
+import Category from '@/app/api/lib/models/Category';
+import { admin } from '@/app/api/lib/auth';
+import { formatError } from '@/app/api/lib/utils';
 
 // Generate reports (admin only)
 export async function GET(req) {

@@ -1,8 +1,8 @@
 // /app/api/products/search/route.js
 import { NextResponse } from 'next/server';
-import connectDB from '@/app/lib/db';
-import Product from '@/app/lib/models/Product';
-import { formatError } from '@/app/lib/utils';
+import connectDB from '@/app/api/lib/db';
+import Product from '@/app/api/lib/models/Product';
+import { formatError } from '@/app/api/lib/utils';
 
 export async function GET(req) {
   try {

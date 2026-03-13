@@ -1,9 +1,9 @@
 // /app/api/orders/route.js - Updated to handle both logged-in and guest users
 import { NextResponse } from 'next/server';
-import connectDB from '@/app/lib/db';
-import Order from '@/app/lib/models/Order';
-import { verifyToken, getTokenFromCookies } from '@/app/lib/auth';
-import { formatError } from '@/app/lib/utils';
+import connectDB from '@/app/api/lib/db';
+import Order from '@/app/api/lib/models/Order';
+import { verifyToken, getTokenFromCookies } from '@/app/api/lib/auth';
+import { formatError } from '@/app/api/lib/utils';
 
 // Create a new order (both authenticated and guest users)
 export async function POST(req) {

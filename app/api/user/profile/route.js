@@ -1,8 +1,8 @@
 // /app/api/user/profile/route.js
 import { NextResponse } from 'next/server';
-import connectDB from '@/app/lib/db';
-import { protect } from '@/app/lib/auth';
-import { formatError } from '@/app/lib/utils';
+import connectDB from '@/app/api/lib/db';
+import { protect } from '@/app/api/lib/auth';
+import { formatError } from '@/app/api/lib/utils';
 
 // Get user profile
 export async function GET(req) {

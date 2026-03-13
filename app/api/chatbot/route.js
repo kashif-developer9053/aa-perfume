@@ -1,9 +1,9 @@
 // /app/api/chatbot/route.js
 import { NextResponse } from 'next/server';
-import connectDB from '@/app/lib/db';
-import Product from '@/app/lib/models/Product';
-import ChatMessage from '@/app/lib/models/ChatMessage';
-import { formatError } from '@/app/lib/utils';
+import connectDB from '@/app/api/lib/db';
+import Product from '@/app/api/lib/models/Product';
+import ChatMessage from '@/app/api/lib/models/ChatMessage';
+import { formatError } from '@/app/api/lib/utils';
 
 // Simple chatbot implementation
 export async function POST(req) {

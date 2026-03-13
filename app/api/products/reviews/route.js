@@ -1,10 +1,10 @@
 // /app/api/products/reviews/route.js
 import { NextResponse } from 'next/server';
-import connectDB from '@/app/lib/db';
-import Product from '@/app/lib/models/Product';
-import Review from '@/app/lib/models/Review';
-import { protect } from '@/app/lib/auth';
-import { formatError } from '@/app/lib/utils';
+import connectDB from '@/app/api/lib/db';
+import Product from '@/app/api/lib/models/Product';
+import Review from '@/app/api/lib/models/Review';
+import { protect } from '@/app/api/lib/auth';
+import { formatError } from '@/app/api/lib/utils';
 
 // Get reviews for a product
 export async function GET(req) {
