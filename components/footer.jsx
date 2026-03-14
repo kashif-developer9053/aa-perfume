@@ -119,7 +119,7 @@ export default function Footer() {
                   className="text-[#a1a1a1] hover:text-[#d4af37] transition-colors duration-300 flex items-center gap-2"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
-                  +92 316 565 8165
+                  +92 304 56 12 169
                 </a>
               </li>
               <li>
@@ -128,7 +128,7 @@ export default function Footer() {
                   className="text-[#a1a1a1] hover:text-[#d4af37] transition-colors duration-300 break-all"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
-                  thechocolatesfactory@icloud.com
+                  www.aslambaig.com
                 </a>
               </li>
               <li>
@@ -136,8 +136,8 @@ export default function Footer() {
                   className="text-[#a1a1a1] not-italic text-xs leading-relaxed"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
-                  Civic Center, Bahria Town<br />
-                  Phase 4, Islamabad
+                  Lane 17A, Sector D PWD Society<br />
+                   Islamabad, 44000
                 </address>
               </li>
             </ul>
