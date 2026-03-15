@@ -1,11 +1,8 @@
 import { NextResponse } from 'next/server';
-import dbConnect from '../../../lib/db'; // Adjust the path as necessary
-import Category from '../../../lib/models/Category'; // Adjust the path as necessary    
-import { writeFile } from 'fs/promises';
-import path from 'path';
-import { v4 as uuidv4 } from 'uuid';
+import dbConnect from '../../../lib/db';
+import Category from '../../../lib/models/Category';
 
-// GET single category (optional)
+// GET single category
 export async function GET(req, { params }) {
   await dbConnect();
   const { id } = params;
@@ -24,23 +21,19 @@ export async function PUT(req, { params }) {
   const { id } = params;
 
   try {
-    const formData = await req.formData();
+    const body = await req.json();
+    const { name, slug, description, parent, imageBase64 } = body;
+
     const updates = {
-      name: formData.get('name'),
-      slug: formData.get('slug'),
-      description: formData.get('description') || '',
-      parent: formData.get('parent') || null,
+      name,
+      slug,
+      description: description || '',
+      parent: parent || null,
     };
 
-    // Handle image upload if new image provided
-    const image = formData.get('image');
-    if (image && typeof image.name === 'string') {
-      const ext = path.extname(image.name);
-      const filename = `${uuidv4()}${ext}`;
-      const buffer = Buffer.from(await image.arrayBuffer());
-      const uploadPath = path.join(process.cwd(), 'public/images', filename);
-      await writeFile(uploadPath, buffer);
-      updates.image = filename;
+    // Only update image if a new one was provided
+    if (imageBase64) {
+      updates.image = imageBase64;
     }
 
     const updated = await Category.findByIdAndUpdate(id, updates, { new: true });

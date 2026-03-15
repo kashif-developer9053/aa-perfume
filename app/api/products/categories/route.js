@@ -4,8 +4,6 @@ import connectDB from '../../lib/db';
 import Category from '../../lib/models/Category';
 import Product from '../../lib/models/Product';
 import { formatError } from '../../lib/utils';
-import fs from 'fs';
-import path from 'path';
 
 export async function GET(req) {
   try {
@@ -56,30 +54,12 @@ export async function POST(req) {
     const body = await req.json();
     const { name, slug, description, parent, imageBase64 } = body;
 
-    let imagePath = null;
-    if (imageBase64) {
-      const matches = imageBase64.match(/^data:(image\/\w+);base64,(.+)$/);
-      if (!matches) {
-        return NextResponse.json({ success: false, message: 'Invalid image data' }, { status: 400 });
-      }
-
-      const ext = matches[1].split('/')[1];
-      const data = matches[2];
-      const buffer = Buffer.from(data, 'base64');
-
-      const filename = `${Date.now()}.${ext}`;
-      const filePath = path.join(process.cwd(), 'public/images', filename);
-
-      await fs.promises.writeFile(filePath, buffer);
-      imagePath = `/images/${filename}`;
-    }
-
     const category = new Category({
       name,
       slug,
       description,
       parent: parent || null,
-      image: imagePath,
+      image: imageBase64 || null,
     });
 
     await category.save();
